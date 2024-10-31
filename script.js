@@ -1,9 +1,11 @@
 (function() {
     const showHackedMessage = true; // Set this variable to true or false
-    const customMessage = `Hey there! 
-Our website is currently undergoing maintenance. 
-We\'ll be back shortly. 
-Thank you for your patience!`; // The message to display
+    const customMessage = [
+        "Hey there!",
+        "Our website is currently undergoing maintenance.",
+        "We'll be back shortly.",
+        "Thank you for your patience!"
+    ]; // Array of message lines
     const buttonText = 'Call Us'; // Text for the button
     const phoneNumber = 'tel:+1234567890'; // Phone number to call (use the format tel:+countrycodephonenumber)
 
@@ -17,7 +19,6 @@ Thank you for your patience!`; // The message to display
         hackedDiv.style.height = '100%';
         hackedDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'; // White background
         hackedDiv.style.color = 'black';
-        hackedDiv.style.fontSize = '48px';
         hackedDiv.style.display = 'flex';
         hackedDiv.style.flexDirection = 'column'; // Stack items vertically
         hackedDiv.style.alignItems = 'center';
@@ -26,12 +27,14 @@ Thank you for your patience!`; // The message to display
         hackedDiv.style.overflow = 'hidden'; // Prevent scrollbar
         hackedDiv.style.textAlign = 'center'; // Center the text
 
-        // Add custom text to the div
-        const messageElement = document.createElement('div');
-        messageElement.textContent = customMessage;
-        messageElement.style.marginBottom = '20px'; // Space between message and button
-        messageElement.style.whiteSpace = 'pre-line'; // Preserve line breaks
-        messageElement.style.fontSize = '24px'; // Adjust font size for multi-line readability
+        // Add each line of the message to a new div element
+        customMessage.forEach(line => {
+            const messageLine = document.createElement('div');
+            messageLine.textContent = line;
+            messageLine.style.fontSize = '24px';
+            messageLine.style.marginBottom = '10px'; // Space between lines
+            hackedDiv.appendChild(messageLine);
+        });
 
         // Create an anchor tag to redirect to a phone call
         const callButton = document.createElement('a');
@@ -46,8 +49,7 @@ Thank you for your patience!`; // The message to display
         callButton.style.cursor = 'pointer'; // Pointer cursor on hover
         callButton.style.textDecoration = 'none'; // Remove underline from the link
 
-        // Append the elements to the hackedDiv
-        hackedDiv.appendChild(messageElement);
+        // Append the button to the hackedDiv
         hackedDiv.appendChild(callButton);
 
         // Append the div to the body
