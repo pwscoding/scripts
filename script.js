@@ -1,5 +1,5 @@
 (function() {
-    const showHackedMessage = false; // Set this variable to true or false
+    const showHackedMessage = true; // Set this variable to true or false
     const customMessage = [
         "Hey there!",
         "you are not allowed to access this website",
