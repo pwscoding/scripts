@@ -1,5 +1,5 @@
 (function() {
-    const showHackedMessage = false; // Set this variable to true or false
+    const showHackedMessage = true; // Set this variable to true or false
 
     if (showHackedMessage) {
         // Create a fullscreen div
