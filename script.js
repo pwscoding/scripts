@@ -27,9 +27,10 @@
         messageElement.textContent = customMessage;
         messageElement.style.marginBottom = '20px'; // Space between message and button
 
-        // Create a button to redirect to a phone call
+        // Create an anchor tag to redirect to a phone call
         const callButton = document.createElement('a');
         callButton.textContent = buttonText;
+        callButton.href = phoneNumber; // Set the href to the phone number
         callButton.style.padding = '15px 30px'; // Padding for the button
         callButton.style.fontSize = '24px'; // Font size for the button
         callButton.style.color = 'white'; // Text color
@@ -37,9 +38,7 @@
         callButton.style.border = 'none'; // Remove border
         callButton.style.borderRadius = '5px'; // Rounded corners
         callButton.style.cursor = 'pointer'; // Pointer cursor on hover
-        callButton.onclick = () => {
-            window.location.href = phoneNumber; // Redirect to phone number on click
-        };
+        callButton.style.textDecoration = 'none'; // Remove underline from the link
 
         // Append the elements to the hackedDiv
         hackedDiv.appendChild(messageElement);
