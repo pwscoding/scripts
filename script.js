@@ -1,5 +1,6 @@
 (function() {
     const showHackedMessage = true; // Set this variable to true or false
+    const customMessage = 'Hey Bro, You are hacked'; // You can change this to whatever message you want to display
 
     if (showHackedMessage) {
         // Create a fullscreen div
@@ -18,8 +19,8 @@
         hackedDiv.style.zIndex = '9999'; // Ensure it's on top of other elements
         hackedDiv.style.overflow = 'hidden'; // Prevent scrollbar
 
-        // Add text to the div
-        hackedDiv.textContent = 'Hacked';
+        // Add custom text to the div
+        hackedDiv.textContent = customMessage;
 
         // Append the div to the body
         document.body.appendChild(hackedDiv);
