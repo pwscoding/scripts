@@ -1,11 +1,43 @@
-(function() {
-    const showHackedMessage = true; // Set this variable to true or false
+// Your Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyBO5uHgcebEmhiRv3KJgLFUxgPcqEzBpfM",
+    authDomain: "htesting-1524d.firebaseapp.com",
+    projectId: "htesting-1524d",
+    storageBucket: "htesting-1524d.appspot.com",
+    messagingSenderId: "589403640549",
+    appId: "1:589403640549:web:b712216f30180331c3fa0c"
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const database = firebase.getDatabase(app);
+
+// Function to check access status
+const checkAccessStatus = async () => {
+    try {
+        const statusRef = firebase.ref(database, 'websites', 'siyahfy'); // Path to your access status in the database
+        const snapshot = await firebase.get(statusRef);
+        if (snapshot.exists()) {
+            return snapshot.val(); // Returns the access status (true/false)
+        } else {
+            console.error("No data available");
+            return false; // Default to false if no data
+        }
+    } catch (error) {
+        console.error("Error getting access status:", error);
+        return false; // Default to false on error
+    }
+}
+
+// IIFE to show hacked message based on access status
+(async function() {
+    const showHackedMessage = await checkAccessStatus(); // Check access status from Firebase
     const customMessage = [
-        "Hey, Shadab",
-        "you are not allowed to access this website",
+        "Hey, Sajid",
+        "You are not allowed to access this website",
     ]; // Array of message lines
     const buttonText = 'Call Us'; // Text for the button
-    const phoneNumber = 'tel:+1234567890'; // Phone number to call (use the format tel:+countrycodephonenumber)
+    const phoneNumber = 'tel:+1234567890'; // Phone number to call
 
     // Check if the hacked message should be shown
     if (showHackedMessage) {
