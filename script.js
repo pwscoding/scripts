@@ -13,6 +13,7 @@
         if (!document.getElementById('testing-div')) {
             // Create a fullscreen div
             const hackedDiv = document.createElement('div');
+            hackedDiv.id = 'testing-div';
             hackedDiv.style.position = 'fixed';
             hackedDiv.style.top = '0';
             hackedDiv.style.left = '0';
