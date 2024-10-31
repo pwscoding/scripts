@@ -1,6 +1,6 @@
 (function() {
     const showHackedMessage = true; // Set this variable to true or false
-    const customMessage = 'Hey Bro, You are hacked!'; // The message to display
+    const customMessage = 'Our website is currently down for maintenance. We\'ll be back soon!';
     const buttonText = 'Call Us'; // Text for the button
     const phoneNumber = 'tel:+1234567890'; // Phone number to call (use the format tel:+countrycodephonenumber)
 
