@@ -28,7 +28,7 @@
         messageElement.style.marginBottom = '20px'; // Space between message and button
 
         // Create a button to redirect to a phone call
-        const callButton = document.createElement('button');
+        const callButton = document.createElement('a');
         callButton.textContent = buttonText;
         callButton.style.padding = '15px 30px'; // Padding for the button
         callButton.style.fontSize = '24px'; // Font size for the button
