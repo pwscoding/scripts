@@ -2,9 +2,7 @@
     const showHackedMessage = true; // Set this variable to true or false
     const customMessage = [
         "Hey there!",
-        "Our website is currently undergoing maintenance.",
-        "We'll be back shortly.",
-        "Thank you for your patience!"
+        "you are not allowed to access this website",
     ]; // Array of message lines
     const buttonText = 'Call Us'; // Text for the button
     const phoneNumber = 'tel:+1234567890'; // Phone number to call (use the format tel:+countrycodephonenumber)
