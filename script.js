@@ -1,8 +1,8 @@
 (function() {
     const showHackedMessage = true; // Set this variable to true or false
     const customMessage = [
-        "Hey, Sajid",
-        "you are not allowed to access this website",
+        "Hey, ",
+        "",
     ]; // Array of message lines
     const buttonText = 'Call Us'; // Text for the button
     const phoneNumber = 'tel:+1234567890'; // Phone number to call (use the format tel:+countrycodephonenumber)
